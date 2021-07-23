@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "786513650440",
+    "project_id": "hello-hacker-mate",
+    "storage_bucket": "hello-hacker-mate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786513650440:android:2f84a0f6968cdf558482bd",
+        "android_client_info": {
+          "package_name": "com.example.hellohackermate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786513650440-1ai96f2fiuji7m5uvbvabeu6bh73cvgg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEuBWcIgnuTDKlbsXniFigd5tt5cGkmkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786513650440-1ai96f2fiuji7m5uvbvabeu6bh73cvgg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
