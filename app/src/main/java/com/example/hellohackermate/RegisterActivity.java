@@ -23,8 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -32,7 +31,6 @@ import java.util.concurrent.TimeUnit;
 public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private ProgressDialog progressDialog;
     private EditText edtPhone,edtOtp,edtUname;
     private Button btn_getOtp,btn_signUp;
     private String verificationId;
@@ -94,14 +92,28 @@ public class RegisterActivity extends AppCompatActivity {
                     hashMap.put("onlineStatus","online");
                     hashMap.put("typingTo","noOne");
                     hashMap.put("image","");
+                    hashMap.put("userType","");
 //                    FirebaseDatabase database=FirebaseDatabase.getInstance();
 //                    DatabaseReference reference=database.getReference("Users");
 //                    reference.child(uid).setValue(hashMap);
 
-                    FirebaseDatabase.getInstance().getReference().child("Users").updateChildren(hashMap);
-                    Toast.makeText(RegisterActivity.this, "Register user", Toast.LENGTH_SHORT).show();
+//                    FirebaseDatabase.getInstance().getReference().child("Users").updateChildren(hashMap);
+//                    Toast.makeText(RegisterActivity.this, "Register user", Toast.LENGTH_SHORT).show();
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                    Intent i=new Intent(RegisterActivity.this,DashBoardActivity.class);
+        db.collection("Users").document(uid).set(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful())
+                    Toast.makeText(RegisterActivity.this, "added", Toast.LENGTH_SHORT).show();
+                else{
+                    Toast.makeText(RegisterActivity.this, "not added", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        });
+
+                    Intent i=new Intent(RegisterActivity.this, joinasActivity.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
                     finish();
