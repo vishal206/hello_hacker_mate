@@ -55,7 +55,6 @@ public class ProfileFragment extends Fragment {
 
         avatartv=view.findViewById(R.id.profile_pic);
         uName=view.findViewById(R.id.txt_uName);
-        btn_addEvent=view.findViewById(R.id.btn_hostEvent);
         btn_editProfile=view.findViewById(R.id.btn_editProfile);
 
         docref.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

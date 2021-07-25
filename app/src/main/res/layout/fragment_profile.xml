@@ -49,18 +49,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline42"
         app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_hostEvent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/my_button"
-        android:text="Host event"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/guideline44"
-        app:layout_constraintEnd_toStartOf="@+id/guideline34"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline33"
-        app:layout_constraintTop_toTopOf="@+id/guideline43" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_editProfile"
