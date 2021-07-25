@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloHackerMate">
-        <activity android:name=".EditProfilePage"></activity>
+        <activity android:name=".PostLikedByActivity"></activity>
+        <activity android:name=".EditProfilePage" />
         <activity android:name=".dashBoardHacker" />
         <activity android:name=".dashBoardHostActivity" />
         <activity android:name=".LoginActivity" />
